@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kong3D | Diseño Industrial y Fabricación Avanzada</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Kong3D | Diseño Industrial y Fabricación Digital</title>
+    
+    <!-- Importación de tipografías: Montserrat para logo y Barlow (DIN style) para textos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Barlow+Condensed:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <style>
         :root {
             --primary-yellow: #ffd100; /* Amarillo 109 */
-            --dark-bg: #000000;
-            --white: #ffffff;
-            --gray-photo: #222222;
+            --dark-bg: #000000;       /* Negro */
+            --white: #ffffff;         /* Blanco */
+            --gray-photo: #181818;    /* Gris para rectángulos de fotos */
             --glass: rgba(255, 255, 255, 0.03);
+            /* Tipografías según especificación */
+            --font-logo: 'Montserrat', sans-serif;
+            --font-technical: "Barlow Condensed", "DIN", "Bahnschrift", sans-serif;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-technical);
             background-color: var(--dark-bg);
             color: var(--white);
             margin: 0;
@@ -24,14 +30,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAVEGACIÓN Y LOGOTIPO KONG3D (Fino y Elegante) */
+        /* NAVEGACIÓN Y LOGOTIPO KONG3D (Letra fina y redonda) */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
+            top: 0; width: 100%; z-index: 1000;
             background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 209, 0, 0.2);
             padding: 18px 0;
         }
@@ -45,30 +49,43 @@
             padding: 0 2rem;
         }
 
-        .logo { font-size: 1.6rem; letter-spacing: -0.5px; display: flex; align-items: center; }
-        .logo .kong { color: var(--white); font-weight: 300; } /* Letra fina unificada */
+        .logo { 
+            font-family: var(--font-logo);
+            font-size: 1.8rem; 
+            letter-spacing: -0.5px; 
+            display: flex; 
+            align-items: center; 
+        }
+        .logo .kong { color: var(--white); font-weight: 300; } /* Montserrat Fina */
         .logo .lower { text-transform: lowercase; }
-        .logo .three-d { color: var(--primary-yellow); font-weight: 700; margin-left: 2px; }
+        .logo .three-d { color: var(--primary-yellow); font-weight: 600; margin-left: 2px; }
 
-        /* HEADER */
+        /* HEADER (DIN Light/Normal) */
         header {
-            padding: 160px 2rem 60px;
+            padding: 180px 2rem 60px;
             text-align: center;
             max-width: 1000px;
             margin: auto;
         }
 
-        header h1 { font-size: 3rem; font-weight: 600; margin-bottom: 15px; line-height: 1.1; }
+        header h1 { 
+            font-size: 3.5rem; 
+            font-weight: 400; 
+            margin-bottom: 15px; 
+            line-height: 1.1; 
+            text-transform: uppercase; 
+            letter-spacing: -1px;
+        }
         header h1 span { color: var(--primary-yellow); }
-        header p { font-size: 1.1rem; opacity: 0.6; font-weight: 300; }
+        header p { font-size: 1.2rem; opacity: 0.6; font-weight: 300; letter-spacing: 1.5px; }
 
-        /* BENTO GRID REOPTIMIZADA (4 Columnas x 4 Filas de 220px) */
+        /* BENTO GRID (Puzzle 4x4 sin espacios) */
         .bento-grid {
             max-width: 1200px;
             margin: 0 auto 100px;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(4, 220px);
+            grid-template-rows: repeat(4, 230px);
             gap: 20px;
             padding: 0 2rem;
         }
@@ -83,13 +100,13 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 30px;
+            padding: 35px;
         }
 
         .bento-item:hover {
             border-color: var(--primary-yellow);
             transform: translateY(-8px);
-            background: rgba(255, 209, 0, 0.05);
+            background: rgba(255, 209, 0, 0.04);
         }
 
         .photo-placeholder {
@@ -109,23 +126,32 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
             margin-bottom: 15px;
         }
 
-        .bento-item h3 { margin: 0; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
-        .bento-item p { margin: 8px 0 0; font-size: 0.8rem; opacity: 0.7; font-weight: 300; line-height: 1.4; }
+        /* Tipografías DIN Light/Normal corregidas con Ñ */
+        .bento-item h3 { margin: 0; font-size: 1.15rem; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; color: var(--white); }
+        .bento-item p { margin: 10px 0 0; font-size: 0.85rem; opacity: 0.7; font-weight: 300; line-height: 1.5; }
 
-        /* CLASES DE TAMAÑO PARA AJUSTE PERFECTO */
-        .item-2x2 { grid-column: span 2; grid-row: span 2; } /* Modelado Industrial */
+        /* Ajuste matemático para GRID perfecto */
+        .item-2x2 { grid-column: span 2; grid-row: span 2; } /* Modelado */
         .item-tall { grid-row: span 2; }                    /* Código y Láser */
         .item-wide { grid-column: span 2; }                    /* Piel, Resina, Imagen */
 
-        footer { text-align: center; padding: 60px; border-top: 1px solid rgba(255, 209, 0, 0.1); font-size: 0.7rem; opacity: 0.4; letter-spacing: 3px; }
+        footer { 
+            text-align: center; 
+            padding: 80px; 
+            border-top: 1px solid rgba(255, 209, 0, 0.1); 
+            font-size: 0.75rem; 
+            opacity: 0.5; 
+            letter-spacing: 4px; 
+            font-weight: 300;
+        }
 
         @media (max-width: 900px) {
             .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .item-2x2, .item-tall, .item-wide { grid-column: span 1; grid-row: span 1; height: 350px; }
+            .item-2x2, .item-tall, .item-wide { grid-column: span 1; grid-row: span 1; height: 380px; }
+            header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -136,63 +162,70 @@
             <div class="logo">
                 <span class="kong">K<span class="lower">ong</span></span><span class="three-d">3D</span>
             </div>
-            <div style="font-size: 0.65rem; letter-spacing: 2px; color: var(--primary-yellow); font-weight: 600;">CARTAGENA | SPAIN</div>
+            <div style="font-size: 0.65rem; letter-spacing: 3px; color: var(--primary-yellow); font-weight: 400;">DISEÑO & FABRICACIÓN</div>
         </div>
     </nav>
 
     <header>
         <h1>Del diseño a la <span>realidad física</span>.</h1>
-        <p>Servicios especializados en ingeniería industrial, fabricación avanzada y artesanía técnica.</p>
+        <p>Servicios especializados en ingeniería, fabricación avanzada y artesanía técnica de alto nivel.</p>
     </header>
 
     <div class="bento-grid">
         
-        <!-- 1. MODELADO INDUSTRIAL (2x2) -->
+        <!-- 1. DISEÑO E INGENIERÍA (2x2) -->
         <div class="bento-item item-2x2">
             <div class="photo-placeholder"></div>
-            <div class="icon-box"><i class="fas fa-drafting-pencil"></i></div>
-            <h3>Modelado Industrial</h3>
-            <p>Ingeniería de precisión y diseño técnico de componentes mediante SolidWorks. Desarrollo integral de planos y conjuntos para fabricación industrial.</p>
+            <div class="icon-box">
+                <!-- Icono de Ingeniería Personalizado -->
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                    <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z"/>
+                    <path d="M12 22V12M12 12L3 7M12 12L21 7"/>
+                    <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                </svg>
+            </div>
+            <h3>Diseño e Ingeniería</h3>
+            <p>Modelado industrial de precisión mediante SolidWorks. Desarrollo integral de planos y conjuntos complejos para fabricación industrial real.</p>
         </div>
 
-        <!-- 2. CÓDIGO PURO (1x2 - TALL) -->
+        <!-- 2. ARQUITECTURA DE CÓDIGO PURO (1x2 TALL) -->
         <div class="bento-item item-tall">
             <div class="photo-placeholder"></div>
             <div class="icon-box"><i class="fas fa-terminal"></i></div>
             <h3>Código Puro</h3>
-            <p>Arquitecturas digitales de alto rendimiento. Estructuras seguras y optimizadas para máxima velocidad de carga y control total.</p>
+            <p>Arquitecturas digitales de alto rendimiento. Desarrollo de entornos web de carga instantánea y control total de la infraestructura.</p>
         </div>
 
-        <!-- 3. CORTE Y GRABADO LÁSER (1x2 - TALL - DOBLE ALTURA) -->
+        <!-- 3. CORTE Y GRABADO LÁSER (1x2 TALL) -->
         <div class="bento-item item-tall">
             <div class="photo-placeholder"></div>
             <div class="icon-box"><i class="fas fa-bullseye"></i></div>
-            <h3>Corte y Grabado Láser</h3>
-            <p>Especialización en maderas nobles y acrílicos técnicos. Resultados quirúrgicos para personalización industrial y proyectos de diseño de alta gama.</p>
+            <h3>Corte y Grabado</h3>
+            <p>Especialización en maderas nobles y acrílicos técnicos. Resultados de alta precisión para personalización industrial y proyectos de diseño.</p>
         </div>
 
-        <!-- 4. VESTUARIO HISTÓRICO (2x1 - WIDE) -->
+        <!-- 4. VESTUARIO HISTÓRICO (2x1 WIDE) -->
         <div class="bento-item item-wide">
             <div class="photo-placeholder"></div>
             <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
-            <h3>Vestuario Histórico en Piel</h3>
-            <p>Artesanía en cuero para recreación. Calidad profesional para las fiestas de Cartagineses y Romanos.</p>
+            <h3>Artesanía en Piel</h3>
+            <p>Vestuario histórico para recreación de épocas antiguas. Calidad superior para las fiestas de Cartagineses y Romanos en Cartagena.</p>
         </div>
 
-        <!-- 5. IMPRESIÓN EN RESINA (2x1 - WIDE - DOBLE ANCHO) -->
+        <!-- 5. IMPRESIÓN EN RESINA (2x1 WIDE) -->
         <div class="bento-item item-wide">
             <div class="photo-placeholder"></div>
             <div class="icon-box"><i class="fas fa-vial"></i></div>
-            <h3>Impresión en Resina de Alto Detalle</h3>
-            <p>Fabricación aditiva con resolución extrema. Ideal para prototipos técnicos y piezas finales con acabados superficiales microscópicos.</p>
+            <h3>Impresión en Resina</h3>
+            <p>Fabricación aditiva de resolución extrema. Prototipado con acabados superficiales de nivel microscópico y fidelidad geométrica absoluta.</p>
         </div>
 
-        <!-- 6. IMAGEN CORPORATIVA (2x1 - WIDE) -->
+        <!-- 6. IMAGEN CORPORATIVA (2x1 WIDE) -->
         <div class="bento-item item-wide">
             <div class="photo-placeholder"></div>
             <div class="icon-box"><i class="fas fa-layer-group"></i></div>
-            <h3>Imagen Corporativa y Fachadas</h3>
-            <p>Diseño de identidad visual y proyecciones arquitectónicas para negocios con visión tecnológica.</p>
+            <h3>Identidad y Fachadas</h3>
+            <p>Diseño de imagen corporativa integral y proyecciones arquitectónicas para negocios que buscan una estética tecnológica y coherente.</p>
         </div>
 
         <!-- 7. FOTOMATÓN DE MADERA (1x1) -->
@@ -200,20 +233,20 @@
             <div class="photo-placeholder"></div>
             <div class="icon-box"><i class="fas fa-camera-retro"></i></div>
             <h3>Fotomatones</h3>
-            <p>Fabricación artesanal en madera premium.</p>
+            <p>Fabricación artesanal en madera premium para eventos exclusivos.</p>
         </div>
 
-        <!-- 8. ESPECIALES (1x1) -->
+        <!-- 8. PROYECTOS ESPECIALES (1x1) -->
         <div class="bento-item">
             <div class="photo-placeholder"></div>
             <h3>Especiales</h3>
-            <p>Desarrollos bajo demanda técnica.</p>
+            <p>Desarrollos bajo demanda técnica específica.</p>
         </div>
 
     </div>
 
     <footer>
-        &copy; 2026 Kong3D | José Carlos Tarifa Díaz | Cartagena
+        &copy; 2026 KONG3D | JOSÉ CARLOS TARIFA DÍAZ | CARTAGENA, ESPAÑA
     </footer>
 
 </body>
