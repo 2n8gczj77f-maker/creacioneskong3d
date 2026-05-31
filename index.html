@@ -39,7 +39,7 @@
             transition: opacity 0.5s ease-in; 
         }
 
-        /* NAVEGACIÓN ACTUALIZADA */
+        /* NAVEGACIÓN UNIFORME */
         nav { 
             position: fixed; 
             top: 0; 
@@ -72,7 +72,6 @@
         .logo .kong { color: var(--white); font-weight: 300; }
         .logo .three-d { color: var(--primary-yellow); font-weight: 600; margin-left: 2px; }
 
-        /* MENÚ DE SECCIONES */
         .nav-menu {
             display: flex;
             list-style: none;
@@ -87,21 +86,16 @@
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 1.5px;
-            font-weight: 400;
             transition: color 0.3s ease;
         }
 
-        .nav-menu a:hover {
-            color: var(--primary-yellow);
-        }
+        .nav-menu a:hover { color: var(--primary-yellow); }
 
-        /* MENÚ HAMBURGUESA */
         .hamburger {
             display: none;
             flex-direction: column;
             gap: 6px;
             cursor: pointer;
-            z-index: 1001;
         }
 
         .hamburger span {
@@ -109,27 +103,13 @@
             width: 28px;
             height: 2px;
             background-color: var(--primary-yellow);
-            transition: 0.3s;
         }
 
-        header { 
-            padding: 180px 2rem 60px; 
-            text-align: center; 
-            max-width: 1000px; 
-            margin: auto; 
-        }
-
-        header h1 { 
-            font-size: 3.5rem; 
-            font-weight: 400; 
-            text-transform: uppercase; 
-            letter-spacing: -1px; 
-            line-height: 1.1; 
-        }
-
+        header { padding: 180px 2rem 60px; text-align: center; max-width: 1000px; margin: auto; }
+        header h1 { font-size: 3.5rem; font-weight: 400; text-transform: uppercase; letter-spacing: -1px; line-height: 1.1; }
         header h1 span { color: var(--primary-yellow); }
 
-        /* BENTO GRID */
+        /* BENTO GRID 4x4 */
         .bento-grid { 
             max-width: 1200px; 
             margin: 0 auto 100px; 
@@ -155,126 +135,59 @@
         }
 
         .photo-container { 
-            position: absolute; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            z-index: -1; 
-            background-color: var(--gray-photo); 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: var(--gray-photo); 
         }
 
-        .photo-container img { 
-            width: 100%; height: 100%; 
-            object-fit: cover; 
-            opacity: 0.5; 
-            transition: 0.5s; 
-        }
+        .photo-container img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; transition: 0.5s; }
+        .bento-item:hover .photo-container img { opacity: 0.8; transform: scale(1.05); }
 
-        .bento-item:hover .photo-container img { 
-            opacity: 0.8; 
-            transform: scale(1.05); 
-        }
-
-        .bento-item.expanding { 
-            position: fixed !important; 
-            z-index: 9999; 
-            transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1); 
-        }
+        .bento-item.expanding { position: fixed !important; z-index: 9999; transition: all 0.8s cubic-bezier(0.7, 0, 0.3, 1); }
 
         .icon-box { 
-            width: 45px; height: 45px; 
-            background: var(--primary-yellow); 
-            color: var(--dark-bg); 
-            border-radius: 10px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            margin-bottom: 15px; 
+            width: 45px; height: 45px; background: var(--primary-yellow); color: var(--dark-bg); 
+            border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; 
         }
 
-        .bento-item h3 { 
-            margin: 0; 
-            font-size: 1.15rem; 
-            font-weight: 400; 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-        }
-
-        .bento-item p { 
-            margin: 10px 0 0; 
-            font-size: 0.88rem; 
-            opacity: 0.9; 
-            font-weight: 300; 
-            line-height: 1.5; 
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5); 
-        }
+        .bento-item h3 { margin: 0; font-size: 1.15rem; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
+        .bento-item p { margin: 10px 0 0; font-size: 0.88rem; opacity: 0.9; font-weight: 300; line-height: 1.5; }
 
         .item-2x2 { grid-column: span 2; grid-row: span 2; }
         .item-tall { grid-row: span 2; }
         .item-wide { grid-column: span 2; }
 
-        /* PIE DE PÁGINA LEGAL */
+        /* PIE DE PÁGINA ACTUALIZADO */
         footer { 
             text-align: center; 
-            padding: 60px 2rem; 
+            padding: 80px 2rem; 
             border-top: 1px solid rgba(255, 209, 0, 0.1); 
+            background-color: #050505;
         }
 
-        .footer-content {
-            font-size: 0.7rem; 
-            opacity: 0.6; 
-            letter-spacing: 2px;
-            margin-bottom: 20px;
+        .footer-info {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
         }
 
-        .legal-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .info-block h4 { color: var(--primary-yellow); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; margin-bottom: 15px; }
+        .info-block p, .info-block a { color: var(--white); text-decoration: none; font-size: 0.85rem; opacity: 0.8; transition: 0.3s; }
+        .info-block a:hover { color: var(--primary-yellow); opacity: 1; }
 
-        .legal-links a {
-            color: var(--white);
-            text-decoration: none;
-            opacity: 0.5;
-            transition: opacity 0.3s;
-        }
+        .footer-legal { font-size: 0.65rem; opacity: 0.4; letter-spacing: 1px; line-height: 2; }
+        .footer-legal a { color: var(--white); text-decoration: none; margin: 0 10px; }
+        .footer-legal a:hover { color: var(--primary-yellow); }
 
-        .legal-links a:hover {
-            opacity: 1;
-            color: var(--primary-yellow);
-        }
-
-        /* RESPONSIVE */
         @media (max-width: 900px) { 
             .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; } 
             .item-2x2, .item-tall, .item-wide { grid-column: span 1; grid-row: span 1; height: 380px; } 
-
             .hamburger { display: flex; }
-            
             .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100%;
-                height: 100vh;
-                background: var(--dark-bg);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: 0.5s;
-                gap: 30px;
+                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+                background: var(--dark-bg); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; gap: 30px;
             }
-
-            .nav-menu.active {
-                right: 0;
-            }
-
-            .nav-menu a {
-                font-size: 1.2rem;
-            }
+            .nav-menu.active { right: 0; }
         }
     </style>
 </head>
@@ -286,7 +199,6 @@
             <a href="index.html" class="logo">
                 <span class="kong">K<span style="text-transform:lowercase">ong</span></span><span class="three-d">3D</span>
             </a>
-            
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="web.html">Web</a></li>
                 <li><a href="ingenieria.html">Ingeniería</a></li>
@@ -297,21 +209,13 @@
                 <li><a href="fotomaton.html">Fotomatón</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
-
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
-    <header>
-        <h1>Del diseño a la <span>realidad física</span>.</h1>
-    </header>
+    <header><h1>Del diseño a la <span>realidad física</span>.</h1></header>
 
     <div class="bento-grid">
-        <!-- Web: Código Puro (2x2) -->
         <div class="bento-item item-2x2" onclick="startTransition(this, 'web.html')">
             <div class="photo-container"><img src="desarrollo-web.jpg" alt=""></div>
             <div class="icon-box"><i class="fas fa-terminal"></i></div>
@@ -319,7 +223,6 @@
             <p>Arquitecturas digitales de alto rendimiento.</p>
         </div>
 
-        <!-- Diseño e Ingeniería (1x2 Tall) -->
         <div class="bento-item item-tall" onclick="startTransition(this, 'ingenieria.html')">
             <div class="photo-container"><img src="ingenieria-industrial.jpg" alt=""></div>
             <div class="icon-box">
@@ -331,7 +234,6 @@
             <p>Modelado industrial mediante SolidWorks.</p>
         </div>
 
-        <!-- Corte y Grabado -->
         <div class="bento-item item-tall" onclick="startTransition(this, 'laser.html')">
             <div class="photo-container"><img src="corte-laser.jpg" alt=""></div>
             <div class="icon-box"><i class="fas fa-bullseye"></i></div>
@@ -339,7 +241,6 @@
             <p>Especialización en maderas nobles y acrílicos.</p>
         </div>
 
-        <!-- Artesanía en Piel -->
         <div class="bento-item item-wide" onclick="startTransition(this, 'artesania.html')">
             <div class="photo-container"><img src="artesania-piel.jpg" alt=""></div>
             <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
@@ -347,7 +248,6 @@
             <p>Vestuario histórico para fiestas regionales.</p>
         </div>
 
-        <!-- Impresión en Resina -->
         <div class="bento-item item-wide" onclick="startTransition(this, 'resina.html')">
             <div class="photo-container"><img src="impresion-resina.jpg" alt=""></div>
             <div class="icon-box"><i class="fas fa-vial"></i></div>
@@ -355,7 +255,6 @@
             <p>Fabricación aditiva de resolución extrema.</p>
         </div>
 
-        <!-- Identidad y Fachadas -->
         <div class="bento-item item-wide" onclick="startTransition(this, 'imagen.html')">
             <div class="photo-container"><img src="imagen-corporativa.jpg" alt=""></div>
             <div class="icon-box"><i class="fas fa-layer-group"></i></div>
@@ -363,7 +262,6 @@
             <p>Imagen corporativa para negocios tecnológicos.</p>
         </div>
 
-        <!-- Fotomatones -->
         <div class="bento-item" onclick="startTransition(this, 'fotomaton.html')">
             <div class="photo-container"><img src="fotomaton-madera.jpg" alt=""></div>
             <div class="icon-box"><i class="fas fa-camera-retro"></i></div>
@@ -371,7 +269,6 @@
             <p>Fabricación artesanal en madera premium.</p>
         </div>
 
-        <!-- Especiales -->
         <div class="bento-item" onclick="startTransition(this, 'especiales.html')">
             <div class="photo-container"><img src="proyectos-especiales.jpg" alt=""></div>
             <h3>Especiales</h3>
@@ -380,51 +277,40 @@
     </div>
 
     <footer>
-        <div class="footer-content">
-            &copy; 2026 KONG3D | JOSÉ CARLOS TARIFA DÍAZ
+        <div class="footer-info">
+            <div class="info-block">
+                <h4>Ubicación</h4>
+                <p>Cartagena (30300)<br>España</p>
+            </div>
+            <div class="info-block">
+                <h4>Contacto</h4>
+                <a href="tel:+34656335105">+34 656 335 105</a><br>
+                <a href="mailto:info@kong3D.es">info@kong3D.es</a>
+            </div>
+            <div class="info-block">
+                <h4>Titular</h4>
+                <p>José Carlos Tarifa Díaz</p>
+            </div>
         </div>
-        <div class="legal-links">
-            <a href="aviso-legal.html">Aviso Legal</a>
-            <a href="privacidad.html">Política de Privacidad</a>
-        </div>
-        <div style="font-size: 0.55rem; opacity: 0.3; margin-top: 15px; letter-spacing: 1px;">
-            ESTA WEB NO UTILIZA COOKIES NI RECOPILA DATOS DE CARÁCTER PERSONAL.
+        <div class="footer-legal">
+            &copy; 2026 KONG3D | TODOS LOS DERECHOS RESERVADOS<br>
+            <a href="aviso-legal.html">AVISO LEGAL</a> | <a href="privacidad.html">POLÍTICA DE PRIVACIDAD</a><br>
+            <span style="opacity: 0.5;">ESTA WEB NO UTILIZA COOKIES NI RECOPILA DATOS PERSONALES.</span>
         </div>
     </footer>
 
     <script>
-        // Lógica del menú hamburguesa
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('nav-menu');
+        hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            // Animación simple de las líneas (opcional)
-            const spans = hamburger.querySelectorAll('span');
-            spans.style.transform = navMenu.classList.contains('active') ? 'rotate(45deg) translate(5px, 5px)' : 'none';
-            spans[1].style.opacity = navMenu.classList.contains('active') ? '0' : '1';
-            spans[2].style.transform = navMenu.classList.contains('active') ? 'rotate(-45deg) translate(7px, -7px)' : 'none';
-        });
-
-        // Función de transición fluida [3, 4]
         function startTransition(element, url) {
             const overlay = document.getElementById('transition-overlay');
             const rect = element.getBoundingClientRect();
-            
-            element.style.top = rect.top + 'px'; 
-            element.style.left = rect.left + 'px';
-            element.style.width = rect.width + 'px'; 
-            element.style.height = rect.height + 'px';
+            element.style.top = rect.top + 'px'; element.style.left = rect.left + 'px';
+            element.style.width = rect.width + 'px'; element.style.height = rect.height + 'px';
             element.classList.add('expanding');
-
-            setTimeout(() => { 
-                element.style.top = '0'; 
-                element.style.left = '0'; 
-                element.style.width = '100vw'; 
-                element.style.height = '100vh'; 
-                element.style.borderRadius = '0'; 
-            }, 10);
-
+            setTimeout(() => { element.style.top = '0'; element.style.left = '0'; element.style.width = '100vw'; element.style.height = '100vh'; element.style.borderRadius = '0'; }, 10);
             setTimeout(() => { overlay.style.opacity = '1'; }, 600);
             setTimeout(() => { window.location.href = url; }, 1100);
         }
