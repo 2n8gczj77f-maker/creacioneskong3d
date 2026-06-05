@@ -7,6 +7,21 @@
 <!-- Tipografías: Montserrat para logo y Barlow para cuerpo técnico -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Barlow:wght@300;400&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<!-- Analítica privada Umami + Rastreador de descargas PDF -->
+<script defer src="https://umami.is" data-website-id="25cdd02c-0e7d-4191-8255-a50d24bfdbb4"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var pdfLink = document.querySelector('a[href*="Briefing_Web Kong3D.pdf"]');
+    if (pdfLink) {
+        pdfLink.addEventListener("click", function() {
+            if (window.umami) {
+                umami.track('Descarga PDF', { archivo: 'Briefing_Web Kong3D.pdf' });
+            }
+        });
+    }
+});
+</script>
+
 <style>
 :root {
 --primary-yellow: #ffd100; /* Amarillo 109 */
