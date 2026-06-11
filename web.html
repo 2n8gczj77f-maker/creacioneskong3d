@@ -103,38 +103,20 @@ background: var(--glass-bg); backdrop-filter: blur(10px);
 padding: 25px; border-radius: 15px; font-weight: 300;
 }
 
-<!-- BOTONES DE DESCARGA -->
-<div class="download-container">
-
-    <div class="download-item">
-        <p class="download-text">
-            Analice las diferencias críticas entre la arquitectura de código puro y las plataformas convencionales.
-        </p>
-        <span class="file-info">PDF | 337 KB</span>
-
-        <a href="Comparativa_web_plataformas_codigo.pdf"
-           class="btn-download"
-           download
-           data-umami-event="Descarga Comparativa Tecnica">
-           <i class="fas fa-file-pdf"></i> Descargar Comparativa Técnica
-        </a>
-    </div>
-
-    <div class="download-item">
-        <p class="download-text">
-            Defina el ADN de su sitio web. Este documento es el punto de partida necesario.
-        </p>
-        <span class="file-info">PDF | 309 KB</span>
-
-        <a href="Briefing_Web_Kong3D.pdf"
-           class="btn-download"
-           download
-           data-umami-event="Descarga Briefing Proyecto">
-           <i class="fas fa-file-pdf"></i> Descargar Briefing de Proyecto
-        </a>
-    </div>
-
-</div>
+/* BOTONES DE DESCARGA */
+.download-container { margin-bottom: 80px; max-width: 600px; }
+.download-item { margin-bottom: 40px; border-left: 2px solid rgba(255, 209, 0, 0.3); padding-left: 25px; }
+.download-text { font-size: 1rem; line-height: 1.5; margin-bottom: 15px; font-weight: 300; opacity: 0.9; }
+.file-info { font-size: 0.75rem; color: var(--primary-yellow); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+.btn-download {
+display: inline-flex; align-items: center; gap: 12px;
+padding: 14px 28px; border-radius: 50px;
+background-color: transparent; color: var(--primary-yellow);
+text-decoration: none; font-weight: 600; text-transform: uppercase;
+font-family: var(--font-logo); font-size: 0.85rem;
+letter-spacing: 1px; transition: 0.4s; border: 2px solid var(--primary-yellow);
+}
+.btn-download:hover { background-color: var(--primary-yellow); color: #000; transform: translateY(-3px); }
 
 /* SECCIÓN TÉCNICA EXTENDIDA */
 .extended-content { margin-top: 60px; padding-bottom: 80px; }
@@ -230,37 +212,18 @@ align-items: center; transition: 0.5s; gap: 35px;
     </div>
 
     <!-- BOTONES DE DESCARGA -->
-<div class="download-container">
-
-    <div class="download-item">
-        <p class="download-text">
-            Analice las diferencias críticas entre la arquitectura de código puro y las plataformas convencionales.
-        </p>
-        <span class="file-info">PDF | 337 KB</span>
-
-        <a href="Comparativa_web_plataformas_codigo.pdf"
-           class="btn-download"
-           download
-           onclick="umami.track('Descarga Comparativa Tecnica')">
-           <i class="fas fa-file-pdf"></i> Descargar Comparativa Técnica
-        </a>
+    <div class="download-container">
+        <div class="download-item">
+            <p class="download-text">Analice las diferencias críticas entre la arquitectura de código puro y las plataformas convencionales.</p>
+            <span class="file-info">PDF | 337 KB</span>
+            <a href="Comparativa_web_plataformas_codigo.pdf" class="btn-download" download><i class="fas fa-file-pdf"></i> Descargar Comparativa Técnica</a>
+        </div>
+        <div class="download-item">
+            <p class="download-text">Defina el ADN de su sitio web. Este documento es el punto de partida necesario.</p>
+            <span class="file-info">PDF | 309 KB</span>
+            <a href="Briefing_Web_Kong3D.pdf" class="btn-download" download><i class="fas fa-file-pdf"></i> Descargar Briefing de Proyecto</a>
+        </div>
     </div>
-
-    <div class="download-item">
-        <p class="download-text">
-            Defina el ADN de su sitio web. Este documento es el punto de partida necesario.
-        </p>
-        <span class="file-info">PDF | 309 KB</span>
-
-        <a href="Briefing_Web_Kong3D.pdf"
-           class="btn-download"
-           download
-           onclick="umami.track('Descarga Briefing Proyecto')">
-           <i class="fas fa-file-pdf"></i> Descargar Briefing de Proyecto
-        </a>
-    </div>
-
-</div>
 
     <!-- SECCIÓN TÉCNICA -->
     <div class="extended-content">
